@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+@import url(./laptopL.css);
+
+@font-face {font-family: 'Dutch801';
+src: url(./font/Du801Bd.ttf);
+src: url(./font/DUT801BI.ttf);
+src: url(./font/Dutch801BoldBT.ttf);}
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #222;
+}
+ul, li{
+    list-style: none;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body{
+    font-family: 'Dutch801';
+    font-size: 100%;
+    overflow-x: hidden;
+}
+
+
+
