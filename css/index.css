@@ -3,7 +3,7 @@
 .container {
   height: 100vh;
 }
-.hamburger{
+.hamburgerbox{
   display: none;
 }
 .header-area {
@@ -50,6 +50,11 @@ nav {
   height: 100%;
   justify-content: center;
   align-items: center;
+  
+ 
+}
+.menu a{
+  color: #222;
 }
 
 .menu li {
@@ -59,6 +64,10 @@ nav {
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  
+
+
 }
 .menu li:hover a {
   border-bottom: 1px solid #222;
@@ -77,7 +86,13 @@ nav {
   /* width: 24px;
   height: 24px; */
   margin-right: 30px;
+  font-family: 'Playfair Display', serif;
 }
+.sidemenu a{
+  color: #222;
+}
+
+
 .sidemenu li:hover a {
   border-bottom: 1px solid #222;
 }
@@ -100,21 +115,21 @@ nav {
 .sub-menu-box{
   background-color: #F3F2EC;
   width: 100%;
-  /* height: 620px; */
-  z-index: 99;
+  height: 410px;
+  z-index: 999;
   position: fixed;
-  top: 20px;
+  top: 12.5%;
   left: 0;
   display: none;
+  font-family: 'Playfair Display', serif;
  
 }
 .sub-menu-box.active{
   display: block;
 }
-.sub-menu-box:hover li{
+.sub-menu{
   
-  
-  color: #222  ;
+  left: 35%;
 }
 
 
@@ -124,26 +139,44 @@ nav {
 .sub-menu{
   position: fixed;
   top: 130px;
-  left: 559px;
-  z-index: 99;
+  /* left: 670px; */
+  z-index: 999;
   opacity: 0;
   
-  transition: 0.3s;
+  transition: 0.5s;
 }
+
+
+
+
 .sub-menu.active{
   opacity: 1;
 }
-.sub-menu li{
-  font-size: 2rem;
+.sub-menu a{
+  font-size: 30px;
   margin-top: 17px;
-  color: #F3F2EC;
-  margin-bottom: 15px;
+  color: #222;
+  margin-bottom: 5px;
   cursor: pointer;
+  z-index: 999;
 }
 
-/* .sub-menu-box .sub-mune li:hover{
-  color: aqua;
+.sub-menu a:hover{
+  color: rgba(129, 125, 106, 0.9);
+}
+
+
+
+
+/* .sub-menu li a{
+  color: #F3F2EC;
+  
 } */
+
+
+
+
+
 
 
 
@@ -211,6 +244,7 @@ nav {
   bottom: 50px;
   left: 20%;
   font-style: italic;
+  font-family: 'Playfair Display', serif;
 }
 
 /* sec-2 */
@@ -234,6 +268,8 @@ nav {
   margin-top: 70px;
   color: #666;
   text-align: center;
+  font-family: 'Playfair Display', serif;
+ 
 }
 
 
@@ -409,6 +445,7 @@ nav {
 
 .sec-4 .content h2 {
   font-size: 50px;
+  font-family: 'Playfair Display', serif;
 }
 
 
@@ -492,10 +529,12 @@ sec-5 */
 .sec-5 .inner-txt{
   text-align: center;
   color: #666;
+  
 }
 .sec-5 .inner-txt h2{
   font-size: 20px;
   margin-bottom: 5px;
+  font-family: 'Playfair Display', serif;
 }
 .sec-5 .inner-txt p{
   font-size: 10px;
@@ -544,13 +583,143 @@ sec-5 */
   }
   .sidemenu{
     border-left: none;
+
+
+    
   }
 
-  .header-area .hamburger{
+  .hamburgerbox{
+    display: block;
+  }
+
+
+  input[id=trigger]{
+    display: none;
+  
+  
+  
+  }
+  label[for=trigger]{
+    width: 30px;
+    height: 20px;
+    /* background-color: blanchedalmond; */
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.3s;
+  
+  
+  }
+  label[for=trigger] span{
+    position: absolute;
+    background-color: rgba(129, 125, 106, 0.9);
+    height: 2px;
+    left: 0;
+    width: 100%;
+    transition: 0.3s;
+    
+  }
+  
+  
+  
+  label[for=trigger] span:nth-child(1){
+    top: 0;
+  
+  }
+  label[for=trigger] span:nth-child(2){
+    top: 50%;
+    
+  }
+  label[for=trigger] span:nth-child(3){
+    top: 100%;
+    
+  }
+  
+  /* 체크됐을때 햄버거버튼 돌아가게 설정 */
+  
+  input[id=trigger]:checked ~ label[for=trigger] span:nth-child(1){
+    top: 50%;
+   transform: rotate(45deg);
+  }
+  input[id=trigger]:checked ~ label[for=trigger] span:nth-child(2){
+  opacity: 0;
+  }
+  input[id=trigger]:checked ~ label[for=trigger] span:nth-child(3){
+    top: 50%;
+   transform: rotate(-45deg);
+  }
+  
+  /* 사이드바영역 */
+  .sidmenubox{
+    width: 100%;
+    height: 1820px;
+    background-color: #f3f2ec;
+    position: fixed;
+    /* 스크롤 되도 제자리에서 고정시킴 */
+   right: 100%;
+   transition: 0.3s;
+   top: 0;
+   font-family: 'Playfair Display', serif;
+    
+  }
+  
+  
+  .sidebar{
+    width: 200px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 30%;
+   
+    
+    
+    
+   
+  }
+ 
+  
+  .sidebar li a{
+    line-height: 1.9;
+    color: #222;
+    font-size: 50px;
+    cursor: pointer;
+  
+  
+  }
+  
+  .sidebar li a:hover{
+    color: rgba(129, 125, 106, 0.9);
+    /* font-weight: 900; */
+    
+  }
+  
+  
+  
+  
+  /* 사이드바 오른쪽으로 숨겼다가 나오게끔 처리 */
+  
+  input[id=trigger]:checked ~ .sidmenubox{
+    right: 0;
+    
+  
+  }
+  
+  /* 햄버거버튼 사이드바 영역만큼 같이 이동 */
+  
+  input[id=trigger]:checked ~ label[for=trigger]{
+    /* right: 410px; */
+    z-index: 999;
+  }
+  
+  
+
+  /* .header-area .hamburger{
     display: block;
     width: 24px;
     height: 15px !important;
-    /* background: #0066cc; */
+    background: #0066cc;
     position: relative;
     cursor: pointer;
     position: absolute;
@@ -579,7 +748,7 @@ sec-5 */
 .header-area .hamburger span:last-child{
     top: 100%;
 
-}
+} */
 
 .header-area .gnb .logo{
     position: absolute;
@@ -656,6 +825,19 @@ sec-5 */
     
     
   }
+
+  .sec-2 .inner-txt {
+    margin-top: 30px;
+    color: #666;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+   
+  }
+  
+
+
+
+
   /* .sec2logo{
     width: 300px;
     height: 300px;
@@ -691,15 +873,24 @@ sec-5 */
   
   }
   .sec-3 .slogan{
+    height: 222px;
    
    display: block;
 
 
   }
+  
   .sec-3 .animation-txt.box1{
+    
+    
+    width: 2182px;
+    height: 100px;
     animation: none;
   }
   .sec-3 .animation-txt.box2{
+    width: 1930px;
+    height: 100px;
+    top: 110px;
     animation: none;
   }
 
