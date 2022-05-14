@@ -2,10 +2,10 @@
 
 @import url(./laptopL.css);
 
-@font-face {font-family: 'Dutch801';
+/* @font-face {font-family: 'Dutch801';
 src: url(./font/Du801Bd.ttf);
 src: url(./font/DUT801BI.ttf);
-src: url(./font/Dutch801BoldBT.ttf);}
+src: url(./font/Dutch801BoldBT.ttf);} */
 
 
 
@@ -17,7 +17,7 @@ src: url(./font/Dutch801BoldBT.ttf);}
 }
 a{
     text-decoration: none;
-    color: #222;
+    /* color: #222; */
 }
 ul, li{
     list-style: none;
